@@ -20,6 +20,7 @@ export HOST_PORT=${HOST_PORT:-8000}
 
 CMD="$@"
 if [ -z "$CMD" ]; then
+  echo "Starting server ..."
 	if [ -z "$ENABLE_GUNICORN" ] || [ "$ENABLE_GUNICORN" = "0" ]; then
 		CMD="python ${APP_NAME}.py"
 	else
@@ -27,5 +28,4 @@ if [ -z "$CMD" ]; then
   fi
 fi
 
-echo "Starting server ..."
 exec $CMD

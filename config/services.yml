@@ -17,7 +17,9 @@ issuers:
       - description: Incorporation
         schema: incorporation.bc_registries
         issuer_url: $APPLICATION_URL_INCORP
-        source_claim: legal_entity_id
+        topic:
+          topic_type: legal-entity
+          topic_source_id: legal_entity_id
         mapping:
           - model: name
             fields:
@@ -28,13 +30,6 @@ issuers:
                 input: legal_name
                 from: value
           - model: address
-            cardinality_fields:
-              - civic_address
-              - city
-              - province
-              - postal_code
-              - country
-              - type
             fields:
               addressee:
                 input: addressee
@@ -61,7 +56,9 @@ issuers:
       - description: Doing Business As
         schema: doing_business_as.bc_registries
         issuer_url: $APPLICATION_URL_DBA
-        source_claim: legal_entity_id
+        topic:
+          topic_type: legal-entity
+          topic_source_id: legal_entity_id
 
 
 verifiers:
