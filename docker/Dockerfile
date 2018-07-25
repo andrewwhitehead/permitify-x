@@ -5,7 +5,7 @@ WORKDIR $HOME
 
 #ADD --chown=indy:indy src/requirements.txt $HOME/src/
 #RUN pip --no-cache-dir install -r src/requirements.txt
-RUN pip install git+https://github.com/PSPC-SPAC-buyandsell/von-x.git#master
+RUN pip install git+https://github.com/PSPC-SPAC-buyandsell/von-x.git@6f61af9c14885b9f31d6644e534381a04e8e6d97
 
 ADD --chown=indy:indy . $HOME
 
